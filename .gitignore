@@ -21,3 +21,55 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# folds
+.idea
+target
+out
+logs
+app
+.settings
+
+# files
+*.log
+*.iml
+*.ipr
+*.iws
+*.class
+.DS_Store
+.classpath
+.project
+*.jar
+*.war
+*.zip
+*.tar.gz
+*.rar
+
+# others
+hs_err_pid*
+*.cache
+*.cache.lock
+rebel*.xml
+*.rebel*
+*.mybatis-generator.xml
+
+.idea/
+conf/
+.DS_Store
+*.iml
+target
+logs
+.classpath
+.project
+.settings/
+.amateras
+..gitignore.un~
+.gitignore~
+rebel.xml
+*.xml.bak
+/.idea/workspace.xml
+/.idea/compiler.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/encodings.xml
+/tj-activity-dal/src/main/resources/mybatis/mybatis-generator.xml
+

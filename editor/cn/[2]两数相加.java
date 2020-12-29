@@ -33,8 +33,10 @@ class Solution2 {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode result = new ListNode(0);
         ListNode head = result;
+        //设置进位 = 0
         int added = 0;
         while (added ==1 || l1 != null || l2 != null) {
+            //分别取节点 1 ，节点 2的值
             int vall1 = l1 != null ? l1.val : 0;
             int vall2 = l2 != null ? l2.val : 0;
             int sum = (vall1 + vall2 + added) % 10;
@@ -56,7 +58,7 @@ class Solution2 {
         ListNode node1 = new ListNode(1, new ListNode(2, new ListNode(3)));
         ListNode node2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
         ListNode res = addTwoNumbers(node1, node2);
-        System.out.println(res);
+        System.out.println(res.toString());
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

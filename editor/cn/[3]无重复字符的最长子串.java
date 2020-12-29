@@ -51,7 +51,7 @@ import java.util.Set;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         int n = s.length();
         if (n == 0) {
             return 0;
