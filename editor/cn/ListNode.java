@@ -22,13 +22,13 @@ public class ListNode {
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder(" [ ");
         ListNode node = this;
         while (node != null) {
             if (node.next != null) {
                 stringBuilder.append(node.val).append(" -> ");
             } else {
-                stringBuilder.append(node.val).append(" end ");
+                stringBuilder.append(node.val).append(" ]");
             }
             node = node.next;
         }

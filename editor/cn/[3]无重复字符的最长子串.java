@@ -46,7 +46,9 @@
 // 👍 4758 👎 0
 
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 //leetcode submit region begin(Prohibit modification and deletion)
@@ -76,6 +78,33 @@ class Solution {
         System.out.println("结束下标为：" + end);
         System.out.println("最长字符串是：" + s.substring(end - ans + 1, end + 1));
         return ans;
+    }
+
+    public static int lengthOfLongestSubstring2(String s) {
+        int length = s.length();
+        int max = 0;
+
+        Map<Character, Integer> map = new HashMap<>();
+        for (int start = 0, end = 0; end < length; end++) {
+            char element = s.charAt(end);
+            if (map.containsKey(element)) {
+                start = Math.max(map.get(element) + 1, start); //map.get()的地方进行+1操作
+            }
+            max = Math.max(max, end - start + 1);
+            map.put(element, end);
+            System.out.print("start: " + start + "  end : " + end + "  max : " + max);
+            System.out.println();
+            map.forEach((key, value) -> {
+                System.out.print(" (key :" + key + " , value : " + value + " );");
+            });
+            System.out.println();
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        String str = "sdfswgosdf";
+        System.out.println(lengthOfLongestSubstring2(str));
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
