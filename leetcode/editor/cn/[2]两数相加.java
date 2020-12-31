@@ -11,26 +11,22 @@
 //原因：342 + 465 = 807
 // 
 // Related Topics 链表 数学 
-// 👍 5343 👎 0
+// 👍 5451 👎 0
 
-
-//leetcode submit region begin(Prohibit modification and deletion)
-
-import java.util.Arrays;
-import java.util.Stack;
-
+class 两数相加{
+    //leetcode submit region begin(Prohibit modification and deletion)
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution2 {
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode result = new ListNode(0);
         ListNode head = result;
         //设置进位 = 0
@@ -53,12 +49,14 @@ class Solution2 {
 
         return head.next;
     }
+}
+//leetcode submit region end(Prohibit modification and deletion)
 
     public static void main(String[] args) {
+        Solution solution = new 两数相加().new Solution();
         ListNode node1 = new ListNode(1, new ListNode(2, new ListNode(3)));
         ListNode node2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
-        ListNode res = addTwoNumbers(node1, node2);
+        ListNode res = solution.addTwoNumbers(node1, node2);
         System.out.println(res.toString());
     }
 }
-//leetcode submit region end(Prohibit modification and deletion)

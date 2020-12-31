@@ -43,17 +43,17 @@
 // s 由英文字母、数字、符号和空格组成 
 // 
 // Related Topics 哈希表 双指针 字符串 Sliding Window 
-// 👍 4758 👎 0
-
+// 👍 4768 👎 0
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-//leetcode submit region begin(Prohibit modification and deletion)
+class 无重复字符的最长子串{
+    //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public static int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstring(String s) {
         int n = s.length();
         if (n == 0) {
             return 0;
@@ -80,31 +80,33 @@ class Solution {
         return ans;
     }
 
-    public static int lengthOfLongestSubstring2(String s) {
-        int length = s.length();
-        int max = 0;
+        public  int lengthOfLongestSubstring2(String s) {
+            int length = s.length();
+            int max = 0;
 
-        Map<Character, Integer> map = new HashMap<>();
-        for (int start = 0, end = 0; end < length; end++) {
-            char element = s.charAt(end);
-            if (map.containsKey(element)) {
-                start = Math.max(map.get(element) + 1, start); //map.get()的地方进行+1操作
+            Map<Character, Integer> map = new HashMap<>();
+            for (int start = 0, end = 0; end < length; end++) {
+                char element = s.charAt(end);
+                if (map.containsKey(element)) {
+                    start = Math.max(map.get(element) + 1, start); //map.get()的地方进行+1操作
+                }
+                max = Math.max(max, end - start + 1);
+                map.put(element, end);
+                System.out.print("start: " + start + "  end : " + end + "  max : " + max);
+                System.out.println();
+                map.forEach((key, value) -> {
+                    System.out.print(" (key :" + key + " , value : " + value + " );");
+                });
+                System.out.println();
             }
-            max = Math.max(max, end - start + 1);
-            map.put(element, end);
-            System.out.print("start: " + start + "  end : " + end + "  max : " + max);
-            System.out.println();
-            map.forEach((key, value) -> {
-                System.out.print(" (key :" + key + " , value : " + value + " );");
-            });
-            System.out.println();
+            return max;
         }
-        return max;
-    }
-
-    public static void main(String[] args) {
-        String str = "sdfswgosdf";
-        System.out.println(lengthOfLongestSubstring2(str));
-    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+    public static void main(String[] args) {
+        Solution solution = new 无重复字符的最长子串().new Solution();
+        String str = "sdfswgosdf";
+        System.out.println(solution.lengthOfLongestSubstring2(str));
+    }
+}
