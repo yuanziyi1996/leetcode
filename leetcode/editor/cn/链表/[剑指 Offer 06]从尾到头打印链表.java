@@ -86,34 +86,36 @@ class Solution {
         return res;
     }
 
-    public ListNode reverseList(ListNode node){
-        if(node == null){
-            return node;
+    public ListNode reverseList(ListNode head){
+        if(head == null){
+            return head;
         }
         // 当前节点的前一个节点
         ListNode pre = null;
 
         // 当前节点的下一个节点
         ListNode next = null;
-        while (node.next!=null){
+        while (head!=null){
             // 记录当前节点的下一个节点位置；
-            next = node.next;
+            next = head.next;
             // 让当前节点指向前一个节点位置，完成反转
-            node.next = pre;
+            head.next = pre;
             // pre 往右走
-            pre = node;
+            pre = head;
             // 当前节点往右继续走
-            node = next;
+            head = next;
         }
-        return node;
+        return pre;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
-        head.newNext(2).newNext(3);
+        head.newNext(2).newNext(3).newNext(4).newNext(5);
         System.out.println(head.toString());
         Solution solution = new 从尾到头打印链表().new Solution();
+        ListNode res = solution.reverseList(head);
+        System.out.println(res.toString());
     }
 }
