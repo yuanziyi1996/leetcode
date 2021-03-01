@@ -28,31 +28,49 @@
 // Related Topics 栈 设计 
 // 👍 172 👎 0
 
+import java.util.LinkedList;
+import java.util.Stack;
+
 class 用两个栈实现队列 {
-         //leetcode submit region begin(Prohibit modification and deletion)
-class CQueue {
+    /**
+     * 第一个栈用于添加元素，第二个栈用来存储待删除的元素
+     * 第二个栈如果为空，则把第一个栈内容pop出再push到第二个栈，保证第二个栈的顶部元素
+     * 是最先进入的元素，删除时就满足 先进先出。
+     */
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class CQueue {
+        Stack<Integer> stack1;
+        Stack<Integer> stack2;
 
-    public CQueue() {
+        public CQueue() {
+            stack1 = new Stack<>();
+            stack2 = new Stack<>();
+        }
 
+        public void appendTail(int value) {
+            stack1.push(value);
+        }
+
+        public int deleteHead() {
+            if (stack2.isEmpty()) {
+                if (stack1.isEmpty()) {
+                    return -1;
+                }
+                while (!stack1.isEmpty()) {
+                    stack2.push(stack1.pop());
+                }
+            }
+            return stack2.pop();
+        }
     }
-    
-    public void appendTail(int value) {
 
-    }
-    
-    public int deleteHead() {
-        return 0;
-    }
-}
-
-/**
- * Your CQueue object will be instantiated and called as such:
- * CQueue obj = new CQueue();
- * obj.appendTail(value);
- * int param_2 = obj.deleteHead();
- */
+    /**
+     * Your CQueue object will be instantiated and called as such:
+     * CQueue obj = new CQueue();
+     * obj.appendTail(value);
+     * int param_2 = obj.deleteHead();
+     */
 //leetcode submit region end(Prohibit modification and deletion)
-
     public static void main(String[] args) {
     }
 }

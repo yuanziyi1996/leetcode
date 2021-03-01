@@ -36,7 +36,7 @@
 // Related Topics 树 
 // 👍 95 👎 0
 
-class 二叉搜索树的最近公共祖先 {
+class 二叉搜索树的最近公共祖先_迭代_遍历 {
     //leetcode submit region begin(Prohibit modification and deletion)
 
     /**
@@ -116,6 +116,6 @@ class 二叉搜索树的最近公共祖先 {
 //leetcode submit region end(Prohibit modification and deletion)
 
     public static void main(String[] args) {
-        Solution solution = new 二叉搜索树的最近公共祖先().new Solution();
+        Solution solution = new 二叉搜索树的最近公共祖先_迭代_遍历().new Solution();
     }
 }
