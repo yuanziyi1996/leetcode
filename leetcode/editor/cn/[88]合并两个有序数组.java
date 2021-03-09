@@ -39,6 +39,7 @@ class 合并两个有序数组 {
         public void merge(int[] nums1, int m, int[] nums2, int n) {
             int n1 = m - 1;
             int n2 = n - 1;
+            // 将数组倒序比较
             while (n1 >= 0 && n2 >= 0) {
                 if (nums1[n1] < nums2[n2]) {
                     nums1[n1 + n2 + 1] = nums2[n2];
@@ -53,11 +54,6 @@ class 合并两个有序数组 {
             while (n2 >= 0) {
                 nums1[n2] = nums2[n2--];
             }
-//            if(n2>=0){
-//                for (int i = 0; i <= n2; i++) {
-//                    nums1[i] = nums2[i];
-//                }
-//            }
 
 
         }

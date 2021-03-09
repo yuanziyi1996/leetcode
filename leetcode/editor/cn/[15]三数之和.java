@@ -100,5 +100,49 @@ class 三数之和 {
         Solution solution = new 三数之和().new Solution();
         int[] nums = {-1, 0, 1, 2, -1, -4};
         System.out.println(solution.threeSum(nums));
+        int[] nums2 = {-1, 0, 1, 2, -1, -4, -2};
+        System.out.println(threeSum_of_target(nums2, 1));
+    }
+
+    public static List<List<Integer>> threeSum_of_target(int[] nums, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+        int len = nums.length;
+        Arrays.sort(nums);
+        if (len < 3) {
+            return res;
+        }
+        // [-4,-1,-1,0,2,4]
+        for (int i = 0; i < nums.length - 2; i++) {
+            int left = i + 1;
+            int right = len - 1;
+            //这里是当 指针到下一位了是时候，需要校验和前一位是否一样，如果一样，则和上一次处理结果一样，就忽略
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            while (left < right) {
+
+                int sum = nums[i] + nums[left] + nums[right];
+                if (sum == target) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(nums[i]);
+                    list.add(nums[left]);
+                    list.add(nums[right]);
+                    res.add(list);
+                    while (left < right && nums[right] == nums[right - 1]) {
+                        right--;
+                    }
+                    while (left < right && nums[left] == nums[left + 1]) {
+                        left++;
+                    }
+                    left++;
+                    right--;
+                } else if (sum > target) {
+                    right--;
+                } else if (sum < target) {
+                    left++;
+                }
+            }
+        }
+        return res;
     }
 }

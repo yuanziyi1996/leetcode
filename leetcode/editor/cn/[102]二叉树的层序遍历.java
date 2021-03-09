@@ -74,18 +74,4 @@ class 二叉树的层序遍历 {
         TreeNode node = TreeNode.rebuildTree(new Integer[]{3, 9, 20, null, null, 15, 7});
         TreeNode.printTree(node);
     }
-
-    //采用递归实现
-    public static void createFullBT_DFS(TreeNode root, Integer numbers[], int len, int i) {
-        if (i <= len) {
-            if (2 * i <= len && numbers[2 * i - 1] != null) {
-                root.left = new TreeNode(numbers[2 * i - 1]);
-                createFullBT_DFS(root.left, numbers, len, 2 * i);
-            }
-            if ((2 * i + 1) <= len && numbers[2 * i] != null) {
-                root.right = new TreeNode(numbers[2 * i]);
-                createFullBT_DFS(root.right, numbers, len, 2 * i + 1);
-            }
-        }
-    }
 }
