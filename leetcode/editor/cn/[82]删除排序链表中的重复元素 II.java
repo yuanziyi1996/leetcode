@@ -71,7 +71,7 @@ class 删除排序链表中的重复元素_II {
 
     public static void main(String[] args) {
         Solution solution = new 删除排序链表中的重复元素_II().new Solution();
-        int[] arr = {1,2,3,3,4,4,5};
+        int[] arr = {1, 2, 3, 3, 4, 4, 5};
         ListNode head = ListNode.buildListNode(arr);
         System.out.println(head.toString());
         ListNode res = solution.deleteDuplicates(head);
