@@ -43,10 +43,6 @@
 // Related Topics 数学 
 // 👍 2560 👎 0
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
 class 整数反转 {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {

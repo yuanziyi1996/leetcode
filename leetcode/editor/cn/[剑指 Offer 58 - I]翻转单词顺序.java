@@ -40,9 +40,6 @@
 // Related Topics 字符串 
 // 👍 60 👎 0
 
-import java.util.Arrays;
-import java.util.Stack;
-
 class 翻转单词顺序 {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {

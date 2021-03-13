@@ -15,7 +15,8 @@
 // Related Topics 深度优先搜索 递归 字符串 回溯算法 
 // 👍 1100 👎 0
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class 电话号码的字母组合 {
     //leetcode submit region begin(Prohibit modification and deletion)

@@ -17,7 +17,8 @@
 // Related Topics 哈希表 
 // 👍 68 👎 0
 
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 class 第一个只出现一次的字符 {
     //leetcode submit region begin(Prohibit modification and deletion)

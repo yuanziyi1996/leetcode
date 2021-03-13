@@ -28,7 +28,6 @@
 // Related Topics 栈 设计 
 // 👍 172 👎 0
 
-import java.util.LinkedList;
 import java.util.Stack;
 
 class 用两个栈实现队列 {

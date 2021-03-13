@@ -26,9 +26,7 @@
 // 👍 181 👎 0
 
 import java.util.Deque;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
 class 滑动窗口的最大值 {
     //leetcode submit region begin(Prohibit modification and deletion)
